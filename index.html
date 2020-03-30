@@ -9,31 +9,32 @@
 </head>
 <body>
     <div id="board">
-
+       
         <div id="keyboard">
-            <canvas id="calc" width="283" height="60">
-            </canvas>
+                <canvas id="calc" width="280" height="60">
+                </canvas>
+            
                 <button class="operators" type="submit" value="clear" onclick="clearCalc()">C</button>
                 <br>
-                <button class="numbers" type="submit" value="7" onclick="allInputs(this.value)">7</button>
-                <button class="numbers" type="submit" value="8" onclick="allInputs(this.value)">8</button>
-                <button class="numbers" type="submit" value="9" onclick="allInputs(this.value)">9</button>
-                <button class="operators" type="submit" value="+" onclick="allInputs(this.value)">+</button>
+                <button class="numbers" type="submit" onclick="allInputs(this.innerText)">7</button>
+                <button class="numbers" type="submit" onclick="allInputs(this.innerText)">8</button>
+                <button class="numbers" type="submit" onclick="allInputs(this.innerText)">9</button>
+                <button class="operators" type="submit" onclick="allInputs(this.innerText)">+</button>
                 <br>
-                <button class="numbers" type="submit" value="4" onclick="allInputs(this.value)">4</button>
-                <button class="numbers" type="submit" value="5" onclick="allInputs(this.value)">5</button>
-                <button class="numbers" type="submit" value="6" onclick="allInputs(this.value)">6</button>
-                <button class="operators" type="submit" value="-" onclick="allInputs(this.value)">-</button>
+                <button class="numbers" type="submit" onclick="allInputs(this.innerText)">4</button>
+                <button class="numbers" type="submit" onclick="allInputs(this.innerText)">5</button>
+                <button class="numbers" type="submit" onclick="allInputs(this.innerText)">6</button>
+                <button class="operators" type="submit" onclick="allInputs(this.innerText)">-</button>
                 <br>
-                <button class="numbers" type="submit" value="1" onclick="allInputs(this.value)">1</button>
-                <button class="numbers" type="submit" value="2" onclick="allInputs(this.value)">2</button>
-                <button class="numbers" type="submit" value="3" onclick="allInputs(this.value)">3</button>
-                <button class="operators" type="submit" value="*" onclick="allInputs(this.value)">x</button>
+                <button class="numbers" type="submit" onclick="allInputs(this.innerText)">1</button>
+                <button class="numbers" type="submit" onclick="allInputs(this.innerText)">2</button>
+                <button class="numbers" type="submit" onclick="allInputs(this.innerText)">3</button>
+                <button class="operators" type="submit" onclick="allInputs(this.innerText)">x</button>
                 <br>
-                <button class="numbers" type="submit" value="." onclick="allInputs(this.value)">.</button>
-                <button class="numbers" type="submit" value="0" onclick="allInputs(this.value)">0</button>
-                <button id="equal" class="operators" type="submit" value="=" onclick="showResult()">=</button>
-                <button class="operators" type="submit" value="/" onclick="allInputs(this.value)">/</button>
+                <button class="numbers" type="submit" onclick="allInputs(this.innerText)">.</button>
+                <button class="numbers" type="submit" onclick="allInputs(this.innerText)">0</button>
+                <button id="equal" class="operators" type="submit" onclick="showResult(inputValues)">=</button>
+                <button class="operators" type="submit" onclick="allInputs(this.innerText)">/</button>
                 <br>
 
 

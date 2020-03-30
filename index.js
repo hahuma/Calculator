@@ -1,5 +1,10 @@
 const canvas = document.getElementById('calc')
 const ctx = canvas.getContext('2d')
+const allButtonsValues = {
+    operators: ["+","-","x","/"],
+    numbers:["1","2","3","4","5","6","7","8","9","0"],
+    point: ".",
+};
 var inputValues = "";
 ctx.font = "30px Arial"
 
@@ -14,19 +19,26 @@ function clearCalc() {
 }
 
 function showResult() {
-  var result = eval(inputValues)
-  inputValues = result
+  function changer(inputValues){
+    if (inputValues.indexOf('x')){
+        var result = inputValues.replace("x","*")
+        return inputValues = result
+    }else if(inputValues.indexOf('÷')){
+        var result = inputValues.replace("÷","/")
+        return inputValues = result
+    }else{
+        return inputValues
+    }
+  }
+  let finalResult = eval(changer(inputValues))
+  inputValues = finalResult
   updatingScreen()
+  return inputValues
 }
 
 
 
 function allInputs(buttonValue) {
-  const allButtonsValues = {
-    operators: ["+","-","*","/"],
-    numbers:["1","2","3","4","5","6","7","8","9","0"],
-    point: "."
-  };
   var anomalyOnString = inputValues.charAt(inputValues.length -2)
   if (allButtonsValues.numbers.indexOf(buttonValue) != -1 ){
     inputValues += buttonValue

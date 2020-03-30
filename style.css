@@ -1,5 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+
 body{
     display: flex;
+    align-items: center; 
     justify-content: center;
     background-color: black;
     padding: 80px;
@@ -11,6 +19,8 @@ div#keyboard{
     border-radius: 10px;
     padding-left: 15px;
     padding-top: 20px;
+    align-items: center;
+    justify-content: center;
 }
 button.operators{
     border-radius: 10px;
@@ -48,4 +58,6 @@ canvas#calc{
     display: flex;
     background-color: #fff;
     border-radius: 5px;
+    line-height: 20px;
 }
+
