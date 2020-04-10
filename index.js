@@ -35,26 +35,38 @@ function useAnswer(answer){
 
 
 function allInputs(buttonValue) {
-  let anomalyOnString = inputValues.charAt(inputValues.length -2)
+  var anomalyOnString = inputValues.charAt(inputValues.length -2)
   if (allButtonsValues.numbers.indexOf(buttonValue) != -1 ){
+
     inputValues += buttonValue
+
     }else if(
-        inputValues.valueOf() == "" && allButtonsValues.point.indexOf(buttonValue) != -1){
+        inputValues.valueOf() == ""
+        && allButtonsValues.point.indexOf(buttonValue) != -1){
+
         inputValues = "0"
         inputValues += buttonValue
+
         }else if(
-            allButtonsValues.operators.indexOf(buttonValue) != -1
+            inputValues !== ""
+            && allButtonsValues.operators.indexOf(buttonValue) != -1
             && anomalyOnString.indexOf(buttonValue) == -1
             && allButtonsValues.operators.indexOf(anomalyOnString) == -1){
+
             inputValues += ` ${buttonValue} `
+
         }else if(
             (inputValues.indexOf(buttonValue) != 1 && buttonValue === allButtonsValues.point)
-            && (inputValues.indexOf(allButtonsValues.point) < inputValues.indexOf(allButtonsValues.operators))
+            && (inputValues.lastIndexOf(allButtonsValues.point) < inputValues.lastIndexOf(allButtonsValues.operators))
             ){
+
                 inputvalues += buttonValue
+
         }else if(inputValues != ""
          && inputValues.charAt(inputValues.length -1) != allButtonsValues.point){
+
             inputValues += buttonValue
+
         }
   updatingScreen()
 }
