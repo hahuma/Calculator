@@ -1,13 +1,12 @@
 const canvas = document.getElementById('calc')
 const ctx = canvas.getContext('2d')
 const allButtonsValues = {
-    operators: ["+","-","x","/"],
+    operators: ["+","-","x","÷"],
     numbers:["1","2","3","4","5","6","7","8","9","0"],
     point: ".",
 };
 var inputValues = "";
 ctx.font = "30px Arial"
-
 
 function updatingScreen(){
   ctx.clearRect(0, 0, 283, 60)
@@ -18,22 +17,20 @@ function clearCalc() {
   ctx.clearRect(0, 0, 283, 60)
 }
 
+function changer(){
+  return inputValues = inputValues.replace(/x/g,"*").replace(/÷/g,"/")
+}
 function showResult() {
-  function changer(inputValues){
-    if (inputValues.indexOf('x')){
-        var result = inputValues.replace("x","*")
-        return inputValues = result
-    }else if(inputValues.indexOf('÷')){
-        var result = inputValues.replace("÷","/")
-        return inputValues = result
-    }else{
-        return inputValues
-    }
-  }
-  let finalResult = eval(changer(inputValues))
-  inputValues = finalResult
+  inputValues = eval(changer())
+  alert(inputValues)
   updatingScreen()
   return inputValues
+}
+
+function useAnswer(answer){
+    inputValues = answer
+    updatingScreen()
+    return inputValues
 }
 
 
@@ -62,3 +59,14 @@ function allInputs(buttonValue) {
         }
   updatingScreen()
 }
+
+
+// let pointRegEx = new RegExp(`/${anyVar.indexOf('.')}/`, "g");
+// let operatorsRegEx = new RegExp(`/${inputValues.indexOf(allButtonsValues.operators)}/`, "g");
+
+// var pointCounter = []
+// var operatorsCounter = []
+
+// pointCounter.push()
+
+// for (i )
