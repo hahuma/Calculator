@@ -22,9 +22,8 @@ function changer(){
 }
 function showResult() {
   inputValues = eval(changer())
-  alert(inputValues)
   updatingScreen()
-  return inputValues
+  return 
 }
 
 function useAnswer(answer){
