@@ -13,6 +13,10 @@ body{
     background-color: black;
 }
 
+button {
+    cursor: pointer;
+}
+
 div#keyboard{
     background-color: #b3b1b1;
     width: 300px;
