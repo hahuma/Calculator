@@ -7,11 +7,12 @@
 
 body{
     display: flex;
-    align-items: center; 
+    padding: 60px;
+    align-content: center; 
     justify-content: center;
     background-color: black;
-    padding: 80px;
 }
+
 div#keyboard{
     background-color: #b3b1b1;
     width: 300px;

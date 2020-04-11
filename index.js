@@ -21,21 +21,15 @@ function changer(){
   return inputValues = inputValues.replace(/x/g,"*").replace(/÷/g,"/")
 }
 function showResult() {
-  inputValues = eval(changer())
+  inputValues = eval(changer()).toString()
   updatingScreen()
-  return 
-}
-
-function useAnswer(answer){
-    inputValues = answer
-    updatingScreen()
-    return inputValues
 }
 
 
 
-function allInputs(buttonValue) {
-  var anomalyOnString = inputValues.charAt(inputValues.length -2)
+
+async function allInputs(buttonValue) {
+  var anomalyOnString = await inputValues.charAt(inputValues.length -2)
   if (allButtonsValues.numbers.indexOf(buttonValue) != -1 ){
 
     inputValues += buttonValue
