@@ -105,5 +105,4 @@ function allInputs(buttonValue) {
                         }
 
   updatingScreen()
-  alert(filteredInputValues.charAt(filteredInputValues.length -1) != allButtonsValues.point)
 }
