@@ -22,7 +22,8 @@ function clearCalc() {
     // This function reset all modificable values to start a new operation
   inputValues = ""
   lastPointPosition = ""
-  operationsPosition = ""
+  operationsPosition = []
+  filteredInputValues = ""
   updatingScreen()
 }
 
