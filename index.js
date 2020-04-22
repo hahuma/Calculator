@@ -13,39 +13,65 @@ ctx.font = "30px Arial"
 
 
 
-function updatingScreen(){ 
-    // This function clear the screen and add print the newest value of the var inputValues
+function updatingScreen(){
+
   ctx.clearRect(0, 0, 283, 60)
   ctx.fillText(inputValues, 0, 30, 283)
+
 }
 function clearCalc() {
-    // This function reset all modificable values to start a new operation
+    
   inputValues = ""
   lastPointPosition = ""
   operationsPosition = []
   filteredInputValues = ""
   updatingScreen()
+
 }
 
-function changer(){
+function changer(){ // This simple function has the response to modify the inputValues to make it able to run the eval function correctly
+    
   return inputValues = inputValues.replace(/x/g,"*").replace(/÷/g,"/")
-}
-function showResult() {
-  inputValues = eval(changer()).toFixed(5).toString()
-  updatingScreen()
+
 }
 
-function hasOperation(){
+
+function showResult() { // This function returns the result of the operation, if it fails, it'll show an error message
+
+  try{
+      if(inputValues.indexOf(allButtonsValues.point) != -1){
+         inputValues = eval(changer()).toFixed(5).toString()
+        }else{
+            inputValues = eval(changer()).toString()
+        }
+    updatingScreen()
+  }catch{
+    alert("This operation is impossible to solve")
+    inputValues = inputValues.replace(/[*]/g,"x").replace(/[/]/g,"÷")
+  }
+
+}
+
+function hasOperation(){ // this function returns a boolean that indicates if the var inputValues has any operators in it
+
   for(let i = 0; i < allButtonsValues.operators.length; i++){
     if(inputValues.indexOf(allButtonsValues.operators[i]) != -1){
       return true
     }
   } 
   return false
+
 }
 
 
 function operationListener(buttonValue){
+    /*
+    This function return the following informations:
+    * The number and type of operators in the operations
+    * The index of the last position of the "."
+    * An array with the index of the position of each operator 
+    */
+
     if (allButtonsValues.operators.indexOf(buttonValue) != -1 ){ 
         lastOperation = buttonValue
     }
@@ -58,7 +84,7 @@ function operationListener(buttonValue){
     }
 }
 
-function allInputs(buttonValue) {
+function allInputs(buttonValue) { // This function define the way the calculator will respond to each input of numbers/operators
 
   operationListener(buttonValue)
   let anomalyOnString = inputValues.charAt(inputValues.length -2)
